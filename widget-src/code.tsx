@@ -21,7 +21,9 @@ const Widget = () => {
         horizontalAlignItems="center"
         verticalAlignItems="center">
         <CharacterRender render={armory.render} />
-        <GearItem gearItem={armory.gear.leftFinger} />
+        <GearItem 
+          gearItem={armory.gear.leftFinger}
+          rightAlign={true} />
       </AutoLayout>
     : <AutoLayout
         direction="horizontal"
