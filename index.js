@@ -81,7 +81,8 @@ app.get('/character-armory', async (req, res) => {
         characterUrl: characterInitialState?.character?.renderRaw?.url,
         backgroundUrl: characterInitialState?.character?.render?.background?.url,
         shadowUrl: characterInitialState?.character?.render?.shadow?.url
-      }
+      },
+      gear: characterInitialState?.character?.gear
     }
 
     await page.close();

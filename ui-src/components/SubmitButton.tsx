@@ -33,16 +33,16 @@ const SubmitButton = ({
       if (characterData.name) {
         parent.postMessage({ 
           pluginMessage: { 
-            type: "add-render", 
+            type: "add-armory", 
             characterData
           } 
         }, "*");
       } else {
-        alert("Render not found!");
+        alert("Armory not found!");
       }
     } catch (err) {
       console.error(err);
-      alert("Failed to fetch character render");
+      alert("Failed to fetch character armory");
     }
   };
 
