@@ -1,4 +1,5 @@
 import * as React from "react";
+import './Control.css';
 
 interface CharacterControlProps {
   character: string,

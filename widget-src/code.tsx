@@ -13,6 +13,7 @@ const Widget = () => {
     figma.ui.onmessage = async (msg) => {
       if (msg.type === "add-armory") {
         setArmory(msg.characterData);
+        figma.closePlugin();
       }
     };
   })
@@ -49,7 +50,7 @@ const Widget = () => {
         spacing={12}
         onClick={async () => {
           await new Promise((resolve) => {
-            figma.showUI(__html__)
+            figma.showUI(__html__, { width: 300, height: 528 })
             figma.ui.on('message', (msg) => {
               if (msg === 'close') {
                 figma.closePlugin()

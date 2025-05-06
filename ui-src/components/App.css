@@ -1,0 +1,16 @@
+.c-app {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(var(--color-brown-bg-light) 50%, transparent);
+  padding: 24px;
+}
+
+.c-app__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+}

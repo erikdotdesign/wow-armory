@@ -1,5 +1,6 @@
 import * as React from "react";
 import Spinner from "./Spinner";
+import './SubmitButton.css';
 
 interface SubmitButtonProps {
   region: Region,
@@ -54,7 +55,7 @@ const SubmitButton = ({
 
   return (
     <button 
-      className={`c-button ${loading ? 'c-button--loading' : ''}`}
+      className="c-submit-button"
       onClick={handleSubmit}
       disabled={loading || character.length < 2 || character.length > 12}>
       {
