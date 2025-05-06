@@ -2,6 +2,7 @@ const { widget } = figma;
 const { AutoLayout, Text, useEffect, useSyncedState, Image, Frame, waitForTask } = widget;
 import CharacterRender from "./CharacterRender";
 import GearItem from "./GearItem";
+import GearColumns from "./GearColumns";
 
 const Widget = () => {
   const [armory, setArmory] = useSyncedState<any>("armory", null);
@@ -21,10 +22,7 @@ const Widget = () => {
         horizontalAlignItems="center"
         verticalAlignItems="center">
         <CharacterRender render={armory.render} />
-        <GearItem 
-          gearItem={armory.gear.leftFinger}
-          rightAlign={false}
-          gearSlot="FINGER_1" />
+        <GearColumns gear={armory.gear} />
       </AutoLayout>
     : <AutoLayout
         direction="horizontal"

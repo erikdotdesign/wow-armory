@@ -1,4 +1,4 @@
-import { rarityColor } from "../helpers.js";
+import { rarityColor } from "./helpers.js";
 import GearSocket from "./GearSocket.js";
 
 const { widget } = figma;
@@ -9,7 +9,7 @@ const ItemLevel = ({itemLevel}) => (
     fill={"#cacaca"}
     fontFamily="Inter" 
     fontSize={12}
-    lineHeight={20}>
+    lineHeight={18}>
     { itemLevel }
   </Text>
 );
@@ -37,22 +37,19 @@ const GearItemDetails = ({
     <AutoLayout
       direction="vertical"
       horizontalAlignItems={rightAlign ? 'end' : 'start'}
-      width={300}>
+      width={264}>
       <Text 
         fill={rarityColor(gearItem.quality.type)}
         fontFamily="Inter" 
-        fontSize={16}
-        lineHeight={24}>
+        fontSize={14}
+        lineHeight={20}>
         { gearItem.name }
       </Text>
       <AutoLayout 
         direction="horizontal"
         wrap={true}
         verticalAlignItems="center"
-        spacing={{
-          vertical: 0,
-          horizontal: 4
-        } as any}>
+        spacing={4}>
         {
           rightAlign
           ? <Sockets sockets={gearItem.sockets} />
@@ -62,7 +59,7 @@ const GearItemDetails = ({
           gearItem.enchantments && gearItem.enchantments.length > 0
           ? <Text
               fontSize={12}
-              lineHeight={20}
+              lineHeight={18}
               fill={rarityColor("UNCOMMON")}
               horizontalAlignText={rightAlign ? 'right' : 'left'}
               maxWidth={216}>

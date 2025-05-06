@@ -1,3 +1,5 @@
+import { WIDGET_WIDTH, WIDGET_HEIGHT } from "./constants";
+
 const { widget } = figma;
 const { AutoLayout, Image } = widget;
 
@@ -6,13 +8,13 @@ const CharacterRender = ({
 }) => {
   return (
     <AutoLayout
-      width={2400}
-      height={1860}>
+      width={WIDGET_WIDTH}
+      height={WIDGET_HEIGHT}>
       <Image
         src={render.backgroundUrl}
         positioning="absolute"
-        width={2400}
-        height={1860}
+        width={WIDGET_WIDTH}
+        height={WIDGET_HEIGHT}
       />
       <Image
         src={render.shadowUrl}

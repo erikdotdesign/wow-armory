@@ -1,4 +1,4 @@
-import { rarityColor } from "../helpers.js";
+import { rarityColor } from "./helpers.js";
 
 const { widget } = figma;
 const { Image, AutoLayout } = widget;
@@ -24,6 +24,7 @@ const GearIcon = ({
       case "SHOULDER":
         return 56 * 2;
       case "CHEST":
+      case "BACK":
         return 56 * 3;
       case "TABARD":
         return 56 * 4;

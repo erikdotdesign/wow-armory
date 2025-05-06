@@ -1,5 +1,6 @@
 import GearIcon from "./GearIcon.js";
 import GearItemDetails from "./GearItemDetails.js";
+import { WIDGET_SPACING } from "./constants";
 
 const { widget } = figma;
 const { AutoLayout } = widget;
@@ -17,11 +18,9 @@ const GearItem = ({
 }: GearItemProps) => {
   return (
     <AutoLayout
-      positioning="absolute"
-      spacing={{
-        vertical: 0,
-        horizontal: 16
-      } as any}>
+      height={56}
+      overflow="visible"
+      spacing={WIDGET_SPACING}>
       {
         rightAlign
         ? null
