@@ -37,11 +37,11 @@ const GearItem = ({
 
   return (
     <AutoLayout
-      height={58}
+      height={72}
       overflow="visible"
       spacing={WIDGET_SPACING}
       onClick={handleClick}
-      padding={1}
+      padding={8}
       stroke={
         isSelected()
         ? "#F4BF2A"
@@ -52,7 +52,7 @@ const GearItem = ({
             a: 0
           }
       }
-      strokeWidth={1}
+      strokeWidth={2}
       hoverStyle={{
         fill: {
           r: 1,
