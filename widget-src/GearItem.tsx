@@ -4,28 +4,43 @@ import GearItemDetails from "./GearItemDetails.js";
 const { widget } = figma;
 const { AutoLayout } = widget;
 
+interface GearItemProps {
+  gearItem: any,
+  rightAlign: boolean,
+  gearSlot: GearSlotType
+}
+
 const GearItem = ({
   gearItem,
-  rightAlign = false
-}) => {
+  rightAlign = false,
+  gearSlot
+}: GearItemProps) => {
   return (
     <AutoLayout
       positioning="absolute"
       spacing={{
         vertical: 0,
         horizontal: 16
-      }}>
+      } as any}>
       {
         rightAlign
         ? null
-        : <GearIcon gearItem={gearItem} />
+        : <GearIcon 
+            gearItem={gearItem}
+            gearSlot={gearSlot} />
       }
-      <GearItemDetails 
-        gearItem={gearItem}
-        rightAlign={rightAlign} />
+      {
+        gearItem
+        ? <GearItemDetails 
+            gearItem={gearItem}
+            rightAlign={rightAlign} />
+        : null
+      }
       {
         rightAlign
-        ? <GearIcon gearItem={gearItem} />
+        ? <GearIcon 
+            gearItem={gearItem}
+            gearSlot={gearSlot} />
         : null
       }
     </AutoLayout>

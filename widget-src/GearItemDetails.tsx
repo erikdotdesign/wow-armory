@@ -24,10 +24,15 @@ const Sockets = ({sockets}) => (
   : null
 );
 
+interface GearItemDetailsProps {
+  gearItem: any,
+  rightAlign: boolean
+}
+
 const GearItemDetails = ({
   gearItem,
   rightAlign
-}) => {
+}: GearItemDetailsProps) => {
   return (
     <AutoLayout
       direction="vertical"
@@ -47,7 +52,7 @@ const GearItemDetails = ({
         spacing={{
           vertical: 0,
           horizontal: 4
-        }}>
+        } as any}>
         {
           rightAlign
           ? <Sockets sockets={gearItem.sockets} />

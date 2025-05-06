@@ -4,7 +4,7 @@ import CharacterRender from "./CharacterRender";
 import GearItem from "./GearItem";
 
 const Widget = () => {
-  const [armory, setArmory] = useSyncedState("armory", null);
+  const [armory, setArmory] = useSyncedState<any>("armory", null);
 
   useEffect(() => {
     figma.ui.onmessage = async (msg) => {
@@ -23,7 +23,8 @@ const Widget = () => {
         <CharacterRender render={armory.render} />
         <GearItem 
           gearItem={armory.gear.leftFinger}
-          rightAlign={true} />
+          rightAlign={false}
+          gearSlot="FINGER_1" />
       </AutoLayout>
     : <AutoLayout
         direction="horizontal"
