@@ -22,11 +22,17 @@ const GearItem = ({
 }: GearItemProps) => {
 
   const handleClick = () => {
-    if (gearInspect && gearInspect.id === gearItem.id) {
-      setGearInspect(null);
-    } else {
-      setGearInspect(gearItem);
+    if (gearItem) {
+      if (gearInspect && gearInspect.id === gearItem.id) {
+        setGearInspect(null);
+      } else {
+        setGearInspect(gearItem);
+      }
     }
+  }
+
+  const isSelected = () => {
+    return (gearItem && gearInspect) && (gearInspect.id === gearItem.id);
   }
 
   return (
@@ -37,7 +43,7 @@ const GearItem = ({
       onClick={handleClick}
       padding={1}
       stroke={
-        gearInspect && gearInspect.id === gearItem.id
+        isSelected()
         ? "#F4BF2A"
         : {
             r: 1,
@@ -54,14 +60,15 @@ const GearItem = ({
           b: 1,
           a: 0.05
         },
-        stroke: gearInspect && gearInspect.id === gearItem.id
-        ? "#F4BF2A"
-        : {
-            r: 1,
-            g: 1,
-            b: 1,
-            a: 0.5
-          }
+        stroke: 
+          isSelected()
+          ? "#F4BF2A"
+          : {
+              r: 1,
+              g: 1,
+              b: 1,
+              a: 0.5
+            }
       }}>
       {
         rightAlign

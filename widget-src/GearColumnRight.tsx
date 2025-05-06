@@ -55,7 +55,7 @@ const GearColumnRight = ({
       {
         gearList.map((gearItem, index) => (
           <GearItem 
-            key={gearItem ? gear[gearItem.prop].id : index}
+            key={gear[gearItem.prop] ? gear[gearItem.prop].id : index}
             gearItem={gear[gearItem.prop]}
             rightAlign={true}
             gearSlot={gearItem.slot}
