@@ -6,21 +6,63 @@ const { widget } = figma;
 const { AutoLayout } = widget;
 
 interface GearItemProps {
-  gearItem: any,
-  rightAlign: boolean,
-  gearSlot: GearSlotType
+  gearItem: any;
+  rightAlign: boolean;
+  gearSlot: GearSlotType;
+  gearInspect: any;
+  setGearInspect(gearItem: any): void;
 }
 
 const GearItem = ({
   gearItem,
   rightAlign = false,
-  gearSlot
+  gearSlot,
+  gearInspect,
+  setGearInspect
 }: GearItemProps) => {
+
+  const handleClick = () => {
+    if (gearInspect && gearInspect.id === gearItem.id) {
+      setGearInspect(null);
+    } else {
+      setGearInspect(gearItem);
+    }
+  }
+
   return (
     <AutoLayout
-      height={56}
+      height={58}
       overflow="visible"
-      spacing={WIDGET_SPACING}>
+      spacing={WIDGET_SPACING}
+      onClick={handleClick}
+      padding={1}
+      stroke={
+        gearInspect && gearInspect.id === gearItem.id
+        ? "#F4BF2A"
+        : {
+            r: 1,
+            g: 1,
+            b: 1,
+            a: 0
+          }
+      }
+      strokeWidth={1}
+      hoverStyle={{
+        fill: {
+          r: 1,
+          g: 1,
+          b: 1,
+          a: 0.05
+        },
+        stroke: gearInspect && gearInspect.id === gearItem.id
+        ? "#F4BF2A"
+        : {
+            r: 1,
+            g: 1,
+            b: 1,
+            a: 0.5
+          }
+      }}>
       {
         rightAlign
         ? null
@@ -28,13 +70,9 @@ const GearItem = ({
             gearItem={gearItem}
             gearSlot={gearSlot} />
       }
-      {
-        gearItem
-        ? <GearItemDetails 
-            gearItem={gearItem}
-            rightAlign={rightAlign} />
-        : null
-      }
+      <GearItemDetails 
+        gearItem={gearItem}
+        rightAlign={rightAlign} />
       {
         rightAlign
         ? <GearIcon 

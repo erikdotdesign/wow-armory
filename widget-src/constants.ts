@@ -12,3 +12,5 @@ export const WIDGET_COLOR_RARE = "#0081ff";
 export const WIDGET_COLOR_UNCOMMON = "#1eff00";
 export const WIDGET_COLOR_COMMON = "#ffffff";
 export const WIDGET_COLOR_POOR = "#9d9d9d";
+
+export const WIDGET_COLUMN_Y_OFFSET = 756;

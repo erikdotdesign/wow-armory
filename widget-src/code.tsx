@@ -1,11 +1,13 @@
 const { widget } = figma;
 const { AutoLayout, Text, useEffect, useSyncedState, Image, Frame, waitForTask } = widget;
 import CharacterRender from "./CharacterRender";
-import GearItem from "./GearItem";
-import GearColumns from "./GearColumns";
+import GearColumnLeft from "./GearColumnLeft";
+import GearColumnRight from "./GearColumnRight";
+import GearBottomRow from "./GearBottomRow";
 
 const Widget = () => {
   const [armory, setArmory] = useSyncedState<any>("armory", null);
+  const [gearInspect, setGearInspect] = useSyncedState<any>("gear inspect", null);
 
   useEffect(() => {
     figma.ui.onmessage = async (msg) => {
@@ -21,8 +23,20 @@ const Widget = () => {
         direction="horizontal"
         horizontalAlignItems="center"
         verticalAlignItems="center">
-        <CharacterRender render={armory.render} />
-        <GearColumns gear={armory.gear} />
+        <CharacterRender 
+          render={armory.render} />
+        <GearColumnLeft 
+          gear={armory.gear}
+          gearInspect={gearInspect}
+          setGearInspect={setGearInspect} />
+        <GearColumnRight 
+          gear={armory.gear}
+          gearInspect={gearInspect}
+          setGearInspect={setGearInspect} />
+        <GearBottomRow 
+          gear={armory.gear}
+          gearInspect={gearInspect}
+          setGearInspect={setGearInspect} />
       </AutoLayout>
     : <AutoLayout
         direction="horizontal"
