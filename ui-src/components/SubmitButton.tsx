@@ -61,7 +61,7 @@ const SubmitButton = ({
       {
         loading
         ? <Spinner />
-        : <span>Add Render</span>
+        : <span>Share Armory</span>
       }
     </button>
   );

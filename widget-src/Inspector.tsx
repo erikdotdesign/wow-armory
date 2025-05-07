@@ -38,8 +38,9 @@ const Inspector = ({
       x={904}
       y={WIDGET_COLUMN_Y_OFFSET}
       padding={24}
+      cornerRadius={16}
       stroke={WIDGET_COLOR_GOLD}
-      strokeWidth={1}
+      strokeWidth={2}
       fill={{
         r: 0,
         g: 0,

@@ -42,6 +42,7 @@ const GearItem = ({
       spacing={WIDGET_SPACING}
       onClick={handleClick}
       padding={8}
+      cornerRadius={12}
       fill={
         isSelected()
         ? {
@@ -62,7 +63,7 @@ const GearItem = ({
             a: 0
           }
       }
-      strokeWidth={1}
+      strokeWidth={2}
       hoverStyle={{
         fill: 
           isSelected()

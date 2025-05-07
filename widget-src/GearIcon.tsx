@@ -59,7 +59,8 @@ const GearIcon = ({
       height={56}
       overflow="hidden"
       stroke={gearItem ? rarityColor(gearItem.quality.type) : "#333333"}
-      strokeWidth={1}>
+      strokeWidth={1}
+      cornerRadius={8}>
       {
         gearItem
         ? <Image

@@ -1,10 +1,13 @@
-const { widget } = figma;
-const { AutoLayout, Text, useEffect, useSyncedState } = widget;
+import { WIDGET_WIDTH, WIDGET_HEIGHT, WIDGET_COLOR_RED } from "./constants";
 import CharacterRender from "./CharacterRender";
 import GearColumnLeft from "./GearColumnLeft";
 import GearColumnRight from "./GearColumnRight";
 import GearBottomRow from "./GearBottomRow";
 import Inspector from "./Inspector";
+import Splash from "./Splash";
+
+const { widget } = figma;
+const { AutoLayout, useEffect, useSyncedState } = widget;
 
 const Widget = () => {
   const [armory, setArmory] = useSyncedState<any>("armory", null);
@@ -47,30 +50,7 @@ const Widget = () => {
           : null
         }
       </AutoLayout>
-    : <AutoLayout
-        direction="horizontal"
-        horizontalAlignItems="center"
-        verticalAlignItems="center"
-        height="hug-contents"
-        padding={8}
-        fill="#FFFFFF"
-        cornerRadius={8}
-        spacing={12}
-        onClick={async () => {
-          await new Promise((resolve) => {
-            figma.showUI(__html__, { width: 300, height: 528 })
-            figma.ui.on('message', (msg) => {
-              if (msg === 'close') {
-                figma.closePlugin()
-              }
-            })
-          })
-        }}
-      >
-        <Text fontSize={32} horizontalAlignText="center">
-          Click Me
-        </Text>
-      </AutoLayout>
+    : <Splash />
   )
 }
 
