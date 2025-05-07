@@ -23,22 +23,25 @@ const InspectorSet = ({
           fill={WIDGET_COLOR_GOLD}>
           { set.display_string }
         </Text>
-        {
-          set.items.map((item, index) => (
-            <Text 
-              key={index}
-              fontFamily="Inter"
-              fontSize={12}
-              lineHeight={18}
-              fill={
-                item.is_equipped
-                ? WIDGET_COLOR_SET_EQUIPPED
-                : WIDGET_COLOR_SET_UNEQUIPPED
-              }>
-              { item.item.name }
-            </Text>
-          ))
-        }
+        <AutoLayout
+          direction="vertical">
+          {
+            set.items.map((item, index) => (
+              <Text 
+                key={index}
+                fontFamily="Inter"
+                fontSize={12}
+                lineHeight={18}
+                fill={
+                  item.is_equipped
+                  ? WIDGET_COLOR_SET_EQUIPPED
+                  : WIDGET_COLOR_SET_UNEQUIPPED
+                }>
+                { item.item.name }
+              </Text>
+            ))
+          }
+        </AutoLayout>
         <AutoLayout
           direction="vertical">
           {

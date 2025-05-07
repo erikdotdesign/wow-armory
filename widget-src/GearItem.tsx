@@ -42,6 +42,16 @@ const GearItem = ({
       spacing={WIDGET_SPACING}
       onClick={handleClick}
       padding={8}
+      fill={
+        isSelected()
+        ? {
+            r: 0,
+            g: 0,
+            b: 0,
+            a: 0.8
+          }
+        : null
+      }
       stroke={
         isSelected()
         ? WIDGET_COLOR_GOLD
@@ -52,14 +62,22 @@ const GearItem = ({
             a: 0
           }
       }
-      strokeWidth={2}
+      strokeWidth={1}
       hoverStyle={{
-        fill: {
-          r: 1,
-          g: 1,
-          b: 1,
-          a: 0.05
-        },
+        fill: 
+          isSelected()
+          ? {
+              r: 0,
+              g: 0,
+              b: 0,
+              a: 0.8
+            }
+          : {
+              r: 0,
+              g: 0,
+              b: 0,
+              a: 0.25
+            },
         stroke: 
           isSelected()
           ? WIDGET_COLOR_GOLD
