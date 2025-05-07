@@ -74,6 +74,16 @@ const GearIcon = ({
             y={getPlaceholderPosition() * -1}
             positioning="absolute" />
       }
+      {
+        gearItem && gearItem.transmog
+        ? <Image
+            width={24}
+            height={24}
+            y={31}
+            positioning="absolute"
+            src={"https://assets-bwa.worldofwarcraft.blizzard.com/51ef2e5911d1706b1607.png"} />
+        : null
+      }
     </AutoLayout>
   )
 }

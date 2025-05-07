@@ -43,7 +43,7 @@ const GearItemDetails = ({
         ? <>
             <Text 
               fill={rarityColor(gearItem.quality.type)}
-              fontFamily="Inter" 
+              fontFamily="Inter"
               fontSize={14}
               lineHeight={20}>
               { gearItem.name }

@@ -1,9 +1,10 @@
 const { widget } = figma;
-const { AutoLayout, Text, useEffect, useSyncedState, Image, Frame, waitForTask } = widget;
+const { AutoLayout, Text, useEffect, useSyncedState } = widget;
 import CharacterRender from "./CharacterRender";
 import GearColumnLeft from "./GearColumnLeft";
 import GearColumnRight from "./GearColumnRight";
 import GearBottomRow from "./GearBottomRow";
+import Inspector from "./Inspector";
 
 const Widget = () => {
   const [armory, setArmory] = useSyncedState<any>("armory", null);
@@ -38,6 +39,13 @@ const Widget = () => {
           gear={armory.gear}
           gearInspect={gearInspect}
           setGearInspect={setGearInspect} />
+        {
+          gearInspect
+          ? <Inspector
+              gearInspect={gearInspect}
+              setGearInspect={setGearInspect} />
+          : null
+        }
       </AutoLayout>
     : <AutoLayout
         direction="horizontal"

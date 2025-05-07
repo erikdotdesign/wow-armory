@@ -1,6 +1,6 @@
 import GearIcon from "./GearIcon.js";
 import GearItemDetails from "./GearItemDetails.js";
-import { WIDGET_SPACING } from "./constants";
+import { WIDGET_SPACING, WIDGET_COLOR_GOLD } from "./constants";
 
 const { widget } = figma;
 const { AutoLayout } = widget;
@@ -44,7 +44,7 @@ const GearItem = ({
       padding={8}
       stroke={
         isSelected()
-        ? "#F4BF2A"
+        ? WIDGET_COLOR_GOLD
         : {
             r: 1,
             g: 1,
@@ -62,7 +62,7 @@ const GearItem = ({
         },
         stroke: 
           isSelected()
-          ? "#F4BF2A"
+          ? WIDGET_COLOR_GOLD
           : {
               r: 1,
               g: 1,
