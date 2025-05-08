@@ -1,24 +1,49 @@
+import { playerClassColor } from "./helpers";
 const { widget } = figma;
-const { Image } = widget;
+const { Image, Text, AutoLayout } = widget;
 
 const Header = ({
   name,
-  faction,
-  dungeonRating,
-  averageItemLevel,
+  title,
   achievement,
+  playerClass,
+  dungeonRating,
+  faction,
+  averageItemLevel,
   race,
-  guild,
-  level,
   realm,
-  spec
+  spec,
+  guild
 }) => {
+
+  const factionIcons = {
+    alliance: "https://assets-bwa.worldofwarcraft.blizzard.com/dab2428aa2f51e140c9a.png",
+    horde: "https://assets-bwa.worldofwarcraft.blizzard.com/3edbc547ab318bd385b2.png"
+  };
+
   return (
-    <Image
-      src={socket.media.content.assets[0].value}
-      width={15}
-      height={15}
-    />
+    <AutoLayout
+      positioning="absolute">
+      <AutoLayout
+        verticalAlignItems="center">
+        <Image
+          src={
+            factionIcons[faction.slug]
+          }
+          width={77}
+          height={100} />
+        <AutoLayout
+          direction="vertical">
+          <Text
+            fontFamily="Inter"
+            fontSize={48}
+            fontWeight={700}
+            fill={playerClassColor(playerClass.enum)}>
+            {name}
+          </Text>
+        </AutoLayout>
+      </AutoLayout>
+    </AutoLayout>
   )
 }
 

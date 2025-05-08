@@ -1,5 +1,6 @@
 import {
-  WIDGET_QUALITY_COLORS
+  WIDGET_QUALITY_COLORS,
+  WIDGET_CLASS_COLORS
 } from './constants';
 
 export const toRgba = (rgba) => {
@@ -15,6 +16,10 @@ export const toRgba = (rgba) => {
     b: rgba.b / 255,
     a: weirdA
   }
+}
+
+export const playerClassColor = (playerClass) => {
+  return WIDGET_CLASS_COLORS[playerClass.toLowerCase()];
 }
 
 export const rarityColor = (rarity) => {

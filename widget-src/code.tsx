@@ -5,6 +5,7 @@ import GearColumnRight from "./GearColumnRight";
 import GearBottomRow from "./GearBottomRow";
 import Inspector from "./Inspector";
 import Splash from "./Splash";
+import Header from "./Header";
 
 const { widget } = figma;
 const { AutoLayout, useEffect, useSyncedState } = widget;
@@ -16,6 +17,7 @@ const Widget = () => {
   useEffect(() => {
     figma.ui.onmessage = async (msg) => {
       if (msg.type === "add-armory") {
+        console.log(msg.characterData);
         setArmory(msg.characterData);
         figma.closePlugin();
       }
@@ -30,6 +32,18 @@ const Widget = () => {
         verticalAlignItems="center">
         <CharacterRender 
           render={armory.render} />
+        <Header
+          name={armory.name}
+          title={armory.title}
+          achievement={armory.achievement}
+          playerClass={armory.class}
+          dungeonRating={armory.dungeonRating}
+          faction={armory.faction}
+          averageItemLevel={armory.averageItemLevel}
+          race={armory.race}
+          realm={armory.realm}
+          spec={armory.spec}
+          guild={armory.guild} />
         <GearColumnLeft 
           gear={armory.gear}
           gearInspect={gearInspect}

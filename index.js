@@ -82,7 +82,17 @@ app.get('/character-armory', async (req, res) => {
         backgroundUrl: characterInitialState?.character?.render?.background?.url,
         shadowUrl: characterInitialState?.character?.render?.shadow?.url
       },
-      gear: characterInitialState?.character?.gear
+      title: characterInitialState?.character?.title,
+      gear: characterInitialState?.character?.gear,
+      achievement: characterInitialState?.character?.achievement,
+      class: characterInitialState?.character?.class,
+      dungeonRating: characterInitialState?.character?.dungeonRating,
+      faction: characterInitialState?.character?.faction,
+      averageItemLevel: characterInitialState?.character?.averageItemLevel,
+      race: characterInitialState?.character?.race,
+      realm: characterInitialState?.character?.realm,
+      spec: characterInitialState?.character?.spec,
+      guild: characterInitialState?.character?.guild,
     }
 
     await page.close();
