@@ -1,3 +1,4 @@
+import { WIDGET_INSPECTOR_DETAILS_WIDTH } from "./constants";
 import { rarityColor } from "./helpers.js"; 
 
 const { widget } = figma;
@@ -17,7 +18,8 @@ const InspectorName = ({
       fill={rarityColor(quality.type)}
       fontFamily="Inter"
       fontSize={16}
-      lineHeight={20}>
+      lineHeight={20}
+      maxWidth={WIDGET_INSPECTOR_DETAILS_WIDTH}>
       { name }
     </Text>
   )

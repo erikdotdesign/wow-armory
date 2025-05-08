@@ -51,7 +51,14 @@ const GearColumnLeft = ({
       positioning="absolute"
       x={400}
       y={WIDGET_COLUMN_Y_OFFSET}
-      spacing={WIDGET_SPACING}>
+      spacing={WIDGET_SPACING}
+      fill={{
+        r: 0,
+        g: 0,
+        b: 0,
+        a: 0.5
+      }}
+      cornerRadius={12}>
       {
         gearList.map((gearItem, index) => (
           <GearItem 

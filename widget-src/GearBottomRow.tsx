@@ -32,7 +32,14 @@ const GearBottomRow = ({
       positioning="absolute"
       x={856}
       y={1520}
-      spacing={WIDGET_SPACING}>
+      spacing={WIDGET_SPACING}
+      fill={{
+        r: 0,
+        g: 0,
+        b: 0,
+        a: 0.5
+      }}
+      cornerRadius={12}>
       {
         gearList.map((gearItem, index) => (
           <GearItem 

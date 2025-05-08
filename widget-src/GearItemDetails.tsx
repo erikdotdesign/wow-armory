@@ -45,7 +45,9 @@ const GearItemDetails = ({
               fill={rarityColor(gearItem.quality.type)}
               fontFamily="Inter"
               fontSize={14}
-              lineHeight={20}>
+              lineHeight={20}
+              maxWidth={264}
+              horizontalAlignText={rightAlign ? 'right' : 'left'}>
               { gearItem.name }
             </Text>
             <AutoLayout 
