@@ -21,18 +21,18 @@ const GearItem = ({
   setGearInspect
 }: GearItemProps) => {
 
+  const isSelected = () => {
+    return (gearItem && gearInspect) && (gearInspect.id === gearItem.id) && (gearInspect.slot.type === gearItem.slot.type);
+  }
+
   const handleClick = () => {
     if (gearItem) {
-      if (gearInspect && gearInspect.id === gearItem.id) {
+      if (isSelected()) {
         setGearInspect(null);
       } else {
         setGearInspect(gearItem);
       }
     }
-  }
-
-  const isSelected = () => {
-    return (gearItem && gearInspect) && (gearInspect.id === gearItem.id);
   }
 
   return (
