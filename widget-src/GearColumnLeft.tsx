@@ -52,13 +52,17 @@ const GearColumnLeft = ({
       x={400}
       y={WIDGET_COLUMN_Y_OFFSET}
       spacing={WIDGET_SPACING}
+      cornerRadius={12}
       fill={{
         r: 0,
         g: 0,
         b: 0,
         a: 0.5
       }}
-      cornerRadius={12}>
+      effect={{
+        type: "background-blur",
+        blur: 20,
+      }}>
       {
         gearList.map((gearItem, index) => (
           <GearItem 

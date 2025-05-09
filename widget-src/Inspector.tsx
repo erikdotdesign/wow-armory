@@ -45,7 +45,11 @@ const Inspector = ({
         r: 0,
         g: 0,
         b: 0,
-        a: 0.8
+        a: 0.75
+      }}
+      effect={{
+        type: "background-blur",
+        blur: 20,
       }}>
       <GearIcon 
         gearItem={gearInspect}

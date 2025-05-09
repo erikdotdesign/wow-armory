@@ -16,6 +16,7 @@ const GearSocket = ({
       case "BLUE":
         return 15 * 2;
       case "WHITE":
+      case "TINKER":
         return 15 * 3;
       case "PRISMATIC":
         return 15 * 4;
@@ -25,8 +26,6 @@ const GearSocket = ({
         return 15 * 6;
       case "GREEN":
         return 15 * 7;
-      case "TINKER":
-        return 15 * 8;
       default:
         return 15 * 8;
     }

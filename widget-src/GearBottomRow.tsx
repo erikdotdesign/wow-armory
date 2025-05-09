@@ -33,13 +33,17 @@ const GearBottomRow = ({
       x={856}
       y={1520}
       spacing={WIDGET_SPACING}
+      cornerRadius={12}
       fill={{
         r: 0,
         g: 0,
         b: 0,
-        a: 0.5
+        a: 0.75
       }}
-      cornerRadius={12}>
+      effect={{
+        type: "background-blur",
+        blur: 20,
+      }}>
       {
         gearList.map((gearItem, index) => (
           <GearItem 
