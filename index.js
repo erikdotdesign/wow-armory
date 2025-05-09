@@ -83,6 +83,7 @@ app.get('/character-armory', async (req, res) => {
         shadowUrl: characterInitialState?.character?.render?.shadow?.url
       },
       title: characterInitialState?.character?.title,
+      level: characterInitialState?.character?.level,
       gear: characterInitialState?.character?.gear,
       achievement: characterInitialState?.character?.achievement,
       class: characterInitialState?.character?.class,

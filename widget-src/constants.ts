@@ -6,6 +6,7 @@ export const WIDGET_SPACING = 16;
 export const WIDGET_INSPECTOR_DETAILS_WIDTH = 464;
 
 export const WIDGET_COLOR_GOLD = "#F4BF2A";
+export const WIDGET_COLOR_GRAY = "#808080";
 export const WIDGET_COLOR_RED = "#AA2409";
 export const WIDGET_COLOR_RED_LIGHT = "#b23300";
 export const WIDGET_COLOR_TRANSMOG = "#D980FF";

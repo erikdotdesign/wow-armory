@@ -1,10 +1,14 @@
-import { playerClassColor } from "./helpers";
+import { WIDGET_WIDTH } from "./constants";
 const { widget } = figma;
 const { Image, Text, AutoLayout } = widget;
+import HeaderName from "./HeaderName";
+import HeaderStats from "./HeaderStats";
+import HeaderDetails from "./HeaderDetails";
 
 const Header = ({
   name,
   title,
+  level,
   achievement,
   playerClass,
   dungeonRating,
@@ -15,34 +19,32 @@ const Header = ({
   spec,
   guild
 }) => {
-
-  const factionIcons = {
-    alliance: "https://assets-bwa.worldofwarcraft.blizzard.com/dab2428aa2f51e140c9a.png",
-    horde: "https://assets-bwa.worldofwarcraft.blizzard.com/3edbc547ab318bd385b2.png"
-  };
-
   return (
     <AutoLayout
-      positioning="absolute">
-      <AutoLayout
-        verticalAlignItems="center">
-        <Image
-          src={
-            factionIcons[faction.slug]
-          }
-          width={77}
-          height={100} />
-        <AutoLayout
-          direction="vertical">
-          <Text
-            fontFamily="Inter"
-            fontSize={48}
-            fontWeight={700}
-            fill={playerClassColor(playerClass.enum)}>
-            {name}
-          </Text>
-        </AutoLayout>
-      </AutoLayout>
+      positioning="absolute"
+      spacing="auto"
+      width={WIDGET_WIDTH}
+      verticalAlignItems="center"
+      padding={{
+        horizontal: 64,
+        vertical: 48
+      }}>
+      <HeaderName
+        name={name}
+        title={title}
+        faction={faction}
+        playerClass={playerClass} />
+      <HeaderStats
+        achievement={achievement}
+        averageItemLevel={averageItemLevel}
+        dungeonRating={dungeonRating} />
+      <HeaderDetails
+        playerClass={playerClass}
+        race={race}
+        spec={spec}
+        guild={guild}
+        realm={realm}
+        level={level} />
     </AutoLayout>
   )
 }

@@ -35,6 +35,7 @@ const Widget = () => {
         <Header
           name={armory.name}
           title={armory.title}
+          level={armory.level}
           achievement={armory.achievement}
           playerClass={armory.class}
           dungeonRating={armory.dungeonRating}

@@ -45,3 +45,22 @@ export const rarityColor = (rarity) => {
   //     return WIDGET_COLOR_POOR;
   // }
 }
+
+export const getNamePosition = (title) => {
+  const placeholder = '{name}';
+
+  const before = title.indexOf(placeholder) > 0;
+  const after = title.indexOf(placeholder) + placeholder.length < title.length;
+
+  const cleanTitle = title.replace(placeholder, '').trim();
+
+  let position;
+
+  if (before) {
+    position = 'succeeds'; // e.g., "Slayer {name}"
+  } else if (after) {
+    position = 'precedes'; // e.g., "{name} Jenkins"
+  }
+
+  return { position, title: cleanTitle }
+}
