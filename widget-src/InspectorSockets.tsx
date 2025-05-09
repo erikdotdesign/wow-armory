@@ -1,4 +1,4 @@
-import { WIDGET_COLOR_STAT } from "./constants";
+import { WIDGET_COLOR_STAT, WIDGET_COLOR_GRAY } from "./constants";
 import GearSocket from "./GearSocket";
 
 const { widget } = figma;
@@ -14,10 +14,14 @@ const InspectorSockets = ({
 
   return (
     sockets && sockets.length > 0
-    ? <AutoLayout direction="vertical">
+    ? <AutoLayout 
+        direction="vertical">
         {
           sockets.map((socket, index) => (
-            <AutoLayout key={index}>
+            <AutoLayout 
+              key={index}
+              spacing={4}
+              verticalAlignItems="center">
               <GearSocket 
                 socket={socket} />
               <Text
@@ -25,8 +29,8 @@ const InspectorSockets = ({
                 fontSize={12}
                 lineHeight={18}
                 fontWeight={400}
-                fill={WIDGET_COLOR_STAT}>
-                { socket.display_string }
+                fill={socket.display_string ? WIDGET_COLOR_STAT : WIDGET_COLOR_GRAY }>
+                { socket.display_string ? socket.display_string : socket.socket_type.name }
               </Text>
             </AutoLayout>
           ))
