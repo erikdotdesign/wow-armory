@@ -49,7 +49,7 @@ const GearColumnRight = ({
     <AutoLayout 
       direction="vertical"
       positioning="absolute"
-      x={1664}
+      x={1656}
       y={WIDGET_COLUMN_Y_OFFSET}
       spacing={WIDGET_SPACING}
       cornerRadius={12}

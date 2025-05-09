@@ -1,6 +1,6 @@
+import { WIDGET_GEAR_ITEM_HEIGHT, WIDGET_GEAR_ITEM_SPACING, WIDGET_GEAR_ITEM_PADDING, WIDGET_COLOR_GOLD } from "./constants";
 import GearIcon from "./GearIcon.js";
 import GearItemDetails from "./GearItemDetails.js";
-import { WIDGET_SPACING, WIDGET_COLOR_GOLD } from "./constants";
 
 const { widget } = figma;
 const { AutoLayout } = widget;
@@ -37,12 +37,12 @@ const GearItem = ({
 
   return (
     <AutoLayout
-      height={72}
-      overflow="visible"
-      spacing={WIDGET_SPACING}
+      overflow="hidden"
+      spacing={WIDGET_GEAR_ITEM_SPACING}
+      height={WIDGET_GEAR_ITEM_HEIGHT}
       onClick={handleClick}
-      padding={8}
       cornerRadius={12}
+      padding={WIDGET_GEAR_ITEM_PADDING}
       fill={
         isSelected()
         ? {

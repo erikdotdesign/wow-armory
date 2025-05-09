@@ -30,7 +30,7 @@ const GearBottomRow = ({
   return (
     <AutoLayout 
       positioning="absolute"
-      x={856}
+      x={840}
       y={1520}
       spacing={WIDGET_SPACING}
       cornerRadius={12}

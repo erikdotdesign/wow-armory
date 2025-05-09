@@ -35,7 +35,7 @@ const HeaderDetails = ({
         lineHeight={44}
         fontWeight={700}
         fill={guild ? WIDGET_COLOR_GOLD : WIDGET_COLOR_GRAY}>
-        {`<${guild ? guild.name : 'No Guild'}>`}
+        {`<${guild ? guild.name : 'No guild'}>`}
       </Text>
       <Text
         fontFamily="Inter"

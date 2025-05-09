@@ -1,3 +1,4 @@
+import { WIDGET_GEAR_ITEM_ICON_SIZE } from './constants';
 import { rarityColor } from "./helpers.js";
 
 const { widget } = figma;
@@ -20,43 +21,43 @@ const GearIcon = ({
       case "HEAD":
         return 0;
       case "NECK":
-        return 56;
+        return WIDGET_GEAR_ITEM_ICON_SIZE;
       case "SHOULDER":
-        return 56 * 2;
+        return WIDGET_GEAR_ITEM_ICON_SIZE * 2;
       case "CHEST":
       case "BACK":
-        return 56 * 3;
+        return WIDGET_GEAR_ITEM_ICON_SIZE * 3;
       case "TABARD":
-        return 56 * 4;
+        return WIDGET_GEAR_ITEM_ICON_SIZE * 4;
       case "SHIRT":
-        return 56 * 5;
+        return WIDGET_GEAR_ITEM_ICON_SIZE * 5;
       case "WRIST":
-        return 56 * 6;
+        return WIDGET_GEAR_ITEM_ICON_SIZE * 6;
       case "HANDS":
-        return 56 * 7;
+        return WIDGET_GEAR_ITEM_ICON_SIZE * 7;
       case "WAIST":
-        return 56 * 8;
+        return WIDGET_GEAR_ITEM_ICON_SIZE * 8;
       case "LEGS":
-        return 56 * 9;
+        return WIDGET_GEAR_ITEM_ICON_SIZE * 9;
       case "FEET":
-        return 56 * 10;
+        return WIDGET_GEAR_ITEM_ICON_SIZE * 10;
       case "FINGER_1":
       case "FINGER_2":
-        return 56 * 11;
+        return WIDGET_GEAR_ITEM_ICON_SIZE * 11;
       case "TRINKET_1":
       case "TRINKET_2":
-        return 56 * 12;
+        return WIDGET_GEAR_ITEM_ICON_SIZE * 12;
       case "MAIN_HAND":
-        return 56 * 13;
+        return WIDGET_GEAR_ITEM_ICON_SIZE * 13;
       case "OFF_HAND":
-        return 56 * 14;
+        return WIDGET_GEAR_ITEM_ICON_SIZE * 14;
     }
   }
 
   return (
     <AutoLayout
-      width={56}
-      height={56}
+      width={WIDGET_GEAR_ITEM_ICON_SIZE}
+      height={WIDGET_GEAR_ITEM_ICON_SIZE}
       overflow="hidden"
       stroke={gearItem ? rarityColor(gearItem.quality.type) : "#333333"}
       strokeWidth={1}
@@ -65,13 +66,13 @@ const GearIcon = ({
         gearItem
         ? <Image
             src={gearItem.media.content.assets[0].value}
-            width={56}
-            height={56}
+            width={WIDGET_GEAR_ITEM_ICON_SIZE}
+            height={WIDGET_GEAR_ITEM_ICON_SIZE}
           />
         : <Image
             src={emptyGearPlaceholderUrl}
-            width={56}
-            height={952}
+            width={WIDGET_GEAR_ITEM_ICON_SIZE}
+            height={WIDGET_GEAR_ITEM_ICON_SIZE * 17}
             y={getPlaceholderPosition() * -1}
             positioning="absolute" />
       }

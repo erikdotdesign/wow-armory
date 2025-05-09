@@ -27,7 +27,7 @@ const Header = ({
       verticalAlignItems="center"
       padding={{
         horizontal: 64,
-        vertical: 48
+        vertical: 56
       }}>
       <HeaderName
         name={name}

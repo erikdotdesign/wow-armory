@@ -1,3 +1,4 @@
+import { WIDGET_GEAR_ITEM_DETAILS_WIDTH } from "./constants";
 import { rarityColor } from "./helpers.js";
 import GearSocket from "./GearSocket.js";
 
@@ -37,7 +38,7 @@ const GearItemDetails = ({
     <AutoLayout
       direction="vertical"
       horizontalAlignItems={rightAlign ? 'end' : 'start'}
-      width={264}>
+      width={WIDGET_GEAR_ITEM_DETAILS_WIDTH}>
       {
         gearItem
         ? <>
@@ -46,7 +47,7 @@ const GearItemDetails = ({
               fontFamily="Inter"
               fontSize={14}
               lineHeight={20}
-              maxWidth={264}
+              maxWidth={WIDGET_GEAR_ITEM_DETAILS_WIDTH}
               horizontalAlignText={rightAlign ? 'right' : 'left'}>
               { gearItem.name }
             </Text>
