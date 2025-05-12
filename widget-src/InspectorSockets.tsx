@@ -1,4 +1,4 @@
-import { WIDGET_COLOR_STAT, WIDGET_COLOR_GRAY } from "./constants";
+import { WIDGET_COLOR_STAT, WIDGET_COLOR_GRAY, WIDGET_INSPECTOR_DETAILS_WIDTH, WIDGET_GEAR_SOCKET_SIZE } from "./constants";
 import GearSocket from "./GearSocket";
 
 const { widget } = figma;
@@ -29,6 +29,7 @@ const InspectorSockets = ({
                 fontSize={12}
                 lineHeight={18}
                 fontWeight={400}
+                maxWidth={WIDGET_INSPECTOR_DETAILS_WIDTH - (WIDGET_GEAR_SOCKET_SIZE + 4)}
                 fill={socket.display_string ? WIDGET_COLOR_STAT : WIDGET_COLOR_GRAY }>
                 { socket.display_string ? socket.display_string : socket.socket_type.name }
               </Text>

@@ -1,3 +1,4 @@
+import { WIDGET_GEAR_SOCKET_SIZE } from "./constants";
 const { widget } = figma;
 const { Image, AutoLayout } = widget;
 
@@ -12,43 +13,43 @@ const GearSocket = ({
       case "RED":
         return 0;
       case "YELLOW":
-        return 15;
+        return WIDGET_GEAR_SOCKET_SIZE;
       case "BLUE":
-        return 15 * 2;
+        return WIDGET_GEAR_SOCKET_SIZE * 2;
       case "WHITE":
       case "TINKER":
-        return 15 * 3;
+        return WIDGET_GEAR_SOCKET_SIZE * 3;
       case "PRISMATIC":
-        return 15 * 4;
+        return WIDGET_GEAR_SOCKET_SIZE * 4;
       case "PURPLE":
-        return 15 * 5;
+        return WIDGET_GEAR_SOCKET_SIZE * 5;
       case "ORANGE":
-        return 15 * 6;
+        return WIDGET_GEAR_SOCKET_SIZE * 6;
       case "GREEN":
-        return 15 * 7;
+        return WIDGET_GEAR_SOCKET_SIZE * 7;
       default:
-        return 15 * 8;
+        return WIDGET_GEAR_SOCKET_SIZE * 8;
     }
   }
 
   return (
     <AutoLayout
-      width={15}
-      height={15}
+      width={WIDGET_GEAR_SOCKET_SIZE}
+      height={WIDGET_GEAR_SOCKET_SIZE}
       overflow="hidden">
       {
         socket.media
         ? <Image
             src={socket.media.content.assets[0].value}
-            width={15}
-            height={15}
+            width={WIDGET_GEAR_SOCKET_SIZE}
+            height={WIDGET_GEAR_SOCKET_SIZE}
           />
         : null
       }
       <Image
         src={socketFrameUrl}
-        width={135}
-        height={15}
+        width={WIDGET_GEAR_SOCKET_SIZE * 9}
+        height={WIDGET_GEAR_SOCKET_SIZE}
         x={getFramePosition(socket.socket_type.type) * -1}
         positioning="absolute" />
     </AutoLayout>

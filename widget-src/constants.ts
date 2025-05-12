@@ -23,6 +23,8 @@ export const WIDGET_VOTE_BUTTON_CORNER_RADIUS = 16;
 export const WIDGET_FACTION_BUTTON_WIDTH = 424;
 export const WIDGET_MOG_BUTTON_WIDTH = 182;
 
+export const WIDGET_GEAR_SOCKET_SIZE = 15;
+
 export const WIDGET_COLOR_GOLD = "#F4BF2A";
 export const WIDGET_COLOR_GRAY = "#808080";
 export const WIDGET_COLOR_RED = "#AA2409";
