@@ -1,4 +1,4 @@
-import { WIDGET_COLOR_STAT } from "./constants";
+import { WIDGET_COLOR_STAT, WIDGET_INSPECTOR_DETAILS_WIDTH } from "./constants";
 
 const { widget } = figma;
 const { AutoLayout, Text } = widget;
@@ -13,7 +13,9 @@ const InspectorInventoryType = ({
   subclass
 }: InspectorInventoryTypeProps) => {
   return (
-    <AutoLayout>
+    <AutoLayout
+      width={WIDGET_INSPECTOR_DETAILS_WIDTH}
+      spacing="auto">
       <Text 
         fontFamily="Inter"
         fontSize={12}
@@ -32,7 +34,7 @@ const InspectorInventoryType = ({
             fill={WIDGET_COLOR_STAT}>
             { subclass.name }
           </Text>
-        : null
+        : <Text></Text>
       }
     </AutoLayout>
   )
