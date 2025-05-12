@@ -1,4 +1,3 @@
-import { WIDGET_WIDTH, WIDGET_HEIGHT, WIDGET_COLOR_RED } from "./constants";
 import CharacterRender from "./CharacterRender";
 import GearColumnLeft from "./GearColumnLeft";
 import GearColumnRight from "./GearColumnRight";
@@ -6,6 +5,7 @@ import GearBottomRow from "./GearBottomRow";
 import Inspector from "./Inspector";
 import Splash from "./Splash";
 import Header from "./Header";
+import FactionButton from "./FactionButton";
 
 const { widget } = figma;
 const { AutoLayout, useEffect, useSyncedState } = widget;
@@ -13,6 +13,10 @@ const { AutoLayout, useEffect, useSyncedState } = widget;
 const Widget = () => {
   const [armory, setArmory] = useSyncedState<any>("armory", null);
   const [gearInspect, setGearInspect] = useSyncedState<any>("gear inspect", null);
+  const [hordeCount, setHordeCount] = useSyncedState<any>("horde count", 0);
+  const [allianceCount, setAllianceCount] = useSyncedState<any>("alliance count", 0);
+  const [mogUpCount, setMogUpCount] = useSyncedState<any>("mog up count", 0);
+  const [mogDownCount, setMogDownCount] = useSyncedState<any>("mog down count", 0);
 
   useEffect(() => {
     figma.ui.onmessage = async (msg) => {
@@ -45,6 +49,20 @@ const Widget = () => {
           realm={armory.realm}
           spec={armory.spec}
           guild={armory.guild} />
+        <FactionButton
+          faction="alliance"
+          factionCount={allianceCount}
+          setFactionCount={setAllianceCount}
+          winning={allianceCount > hordeCount}
+          x={763}
+          y={354} />
+        <FactionButton
+          faction="horde"
+          factionCount={hordeCount}
+          setFactionCount={setHordeCount}
+          winning={hordeCount > allianceCount}
+          x={1212}
+          y={354} />
         <GearColumnLeft 
           gear={armory.gear}
           gearInspect={gearInspect}

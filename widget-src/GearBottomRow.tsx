@@ -1,5 +1,5 @@
 import GearItem from "./GearItem";
-import { WIDGET_SPACING } from "./constants";
+import { WIDGET_SPACING, WIDGET_GEAR_COLUMN_PADDING, WIDGET_GEAR_COLUMN_SPACING, WIDGET_GEAR_COLUMN_BORDER_RADIUS } from "./constants";
 
 const { widget } = figma;
 const { AutoLayout } = widget;
@@ -30,10 +30,11 @@ const GearBottomRow = ({
   return (
     <AutoLayout 
       positioning="absolute"
-      x={840}
+      x={836}
       y={1520}
-      spacing={WIDGET_SPACING}
-      cornerRadius={12}
+      spacing={WIDGET_GEAR_COLUMN_SPACING}
+      padding={WIDGET_GEAR_COLUMN_PADDING}
+      cornerRadius={WIDGET_GEAR_COLUMN_BORDER_RADIUS}
       fill={{
         r: 0,
         g: 0,
