@@ -1,4 +1,4 @@
-import { WIDGET_SPACING, WIDGET_COLOR_ALLIANCE, WIDGET_COLOR_HORDE, WIDGET_COLOR_GOLD } from "./constants";
+import { WIDGET_SPACING, WIDGET_COLOR_ALLIANCE, WIDGET_COLOR_HORDE, WIDGET_COLOR_GOLD, WIDGET_FACTION_BUTTON_WIDTH, WIDGET_VOTE_BUTTON_HEIGHT, WIDGET_VOTE_BUTTON_CORNER_RADIUS } from "./constants";
 
 const { widget } = figma;
 const { AutoLayout, Ellipse, SVG, Text } = widget;
@@ -67,12 +67,12 @@ const FactionButton = ({
       verticalAlignItems="center"
       overflow="visible"
       spacing="auto"
-      width={424}
-      height={104}
+      width={WIDGET_FACTION_BUTTON_WIDTH}
+      height={WIDGET_VOTE_BUTTON_HEIGHT}
       padding={24}
       x={x}
       y={y}
-      cornerRadius={12}
+      cornerRadius={WIDGET_VOTE_BUTTON_CORNER_RADIUS}
       fill={{
         r: 0,
         g: 0,
@@ -142,7 +142,7 @@ const FactionButton = ({
             height={48}
             horizontalAlignItems="center"
             verticalAlignItems="center"
-            x={-24}
+            x={faction === 'alliance' ? -24 : WIDGET_FACTION_BUTTON_WIDTH - 24}
             y={-24}>
             <Ellipse
               positioning="absolute"
