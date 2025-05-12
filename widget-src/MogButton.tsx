@@ -1,4 +1,4 @@
-import { WIDGET_VOTE_BUTTON_HEIGHT, WIDGET_MOG_BUTTON_WIDTH, WIDGET_VOTE_BUTTON_CORNER_RADIUS } from "./constants";
+import { WIDGET_VOTE_BUTTON_HEIGHT, WIDGET_MOG_BUTTON_WIDTH, WIDGET_VOTE_BUTTON_CORNER_RADIUS, WIDGET_COLOR_GOLD } from "./constants";
 
 const { widget } = figma;
 const { AutoLayout, Ellipse, SVG, Text } = widget;
@@ -8,6 +8,7 @@ interface MogButtonProps {
   mogVoteCount: any;
   x: number;
   y: number;
+  winning: boolean;
   setMogVoteCount(mogVoteCount: any): void;
 }
 
@@ -16,6 +17,7 @@ const MogButton = ({
   mogVoteCount,
   x,
   y,
+  winning,
   setMogVoteCount
 }: MogButtonProps) => {
 
@@ -31,6 +33,12 @@ const MogButton = ({
     </svg>
   `;
 
+  const winningIcon = `
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 21V19H16V21H4ZM9.65 16.15L4 10.5L6.1 8.35L11.8 14L9.65 16.15ZM16 9.8L10.35 4.1L12.5 2L18.15 7.65L16 9.8ZM20.6 20L7.55 6.95L8.95 5.55L22 18.6L20.6 20Z" fill="black"/>
+    </svg>
+  `;
+
   const handleClick = () => {
     setMogVoteCount(mogVoteCount + 1);
   }
@@ -40,6 +48,7 @@ const MogButton = ({
       positioning="absolute"
       verticalAlignItems="center"
       horizontalAlignItems="center"
+      overflow="visible"
       spacing={8}
       width={WIDGET_MOG_BUTTON_WIDTH}
       height={WIDGET_VOTE_BUTTON_HEIGHT}
@@ -106,6 +115,28 @@ const MogButton = ({
             width={56}
             height={56} />
           : null
+      }
+      {
+        winning
+        ? <AutoLayout
+            positioning="absolute"
+            width={48}
+            height={48}
+            horizontalAlignItems="center"
+            verticalAlignItems="center"
+            x={mogVote === 'upvote' ? -24 : WIDGET_MOG_BUTTON_WIDTH - 24}
+            y={-24}>
+            <Ellipse
+              positioning="absolute"
+              width={48}
+              height={48}
+              fill={WIDGET_COLOR_GOLD} />
+            <SVG
+              src={winningIcon}
+              width={32}
+              height={32} />
+          </AutoLayout>
+        : null
       }
     </AutoLayout>
   )

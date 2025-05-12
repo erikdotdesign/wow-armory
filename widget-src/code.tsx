@@ -94,12 +94,14 @@ const Widget = () => {
         <MogButton
           mogVote="upvote"
           mogVoteCount={mogUpvoteCount}
+          winning={mogUpvoteCount > mogDownvoteCount}
           setMogVoteCount={setMogUpvoteCount}
           x={384}
           y={354} />
         <MogButton
           mogVote="downvote"
           mogVoteCount={mogDownvoteCount}
+          winning={mogDownvoteCount > mogUpvoteCount}
           setMogVoteCount={setMogDownvoteCount}
           x={1834}
           y={354} />
