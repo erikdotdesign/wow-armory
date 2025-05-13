@@ -7,3 +7,5 @@ A Figma World of Warcraft armory widget. Share player profiles, inspect gear, ra
 ![Screenshot](screenshot-2.png)
 
 ![Screenshot](screenshot-3.png)
+
+![Screenshot](screenshot-4.png)
